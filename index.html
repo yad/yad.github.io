@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://localhost:60713/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Legacy Web Application</title>
+    
+    <!-- include rpgui -->
+    <link href="./resources/rpgui.min.css" rel="stylesheet" type="text/css">
+    <script src="./resources/rpgui.min.js"></script>
+    <style>
+
+        body, #container {
+            background: #aaf;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .inner {
+            background: #444;
+            padding-left: 20px;
+            padding-right: 20px;
+            min-width: 740px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+          
+        .rpgui-container {
+            font-size: 10px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .quest:hover label {
+            color: #ff0;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            [].forEach.call(document.querySelectorAll('div.quest'), function (quest) {
+                quest.addEventListener('click', function () {
+                    [].forEach.call(document.querySelectorAll('div.details'), function (details) {
+                        details.classList.add("hide");
+                        if (details.id === 'details_' + quest.id) {
+                            details.classList.toggle("hide");
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="rpgui-content rpgui-cursor-default" style="overflow-y:scroll;">
+        <div id="container">
+            <div id="main"></div>
+            <div class="inner rpgui-container framed" style="position:relative">
+                <header>
+                    <h1 style="font-size:250%">Legacy Web Application</h1>
+                    <hr class="golden">
+                    <h2 style="font-size:175%">Hi yad, are you ready for the challenge ?</h2>
+                </header>
+                
+                <div class="rpgui-container framed-grey" style="display:inline-block; width: 100%;">
+                    <div>
+                        <div class="rpgui-container framed-golden-2" style="position:relative; width:47%; float:left;">
+                            <h1>Quest book</h1>
+                            <hr>
+                                <div class="quest rpgui-cursor-point" id="0">
+                                    <input type="checkbox" data-rpguitype="checkbox" class="rpgui-checkbox">
+                                    <label>Upgrade .NET Framework</label>
+                                </div>
+                                <div class="quest rpgui-cursor-point" id="1">
+                                    <input type="checkbox" data-rpguitype="checkbox" class="rpgui-checkbox">
+                                    <label>Upgrade MVC Framework</label>
+                                </div>
+                                <div class="quest rpgui-cursor-point" id="2">
+                                    <input type="checkbox" data-rpguitype="checkbox" class="rpgui-checkbox">
+                                    <label>Use IIS Pool Integrated Pipeline Mode</label>
+                                </div>
+                                <div class="quest rpgui-cursor-point" id="3">
+                                    <input type="checkbox" data-rpguitype="checkbox" class="rpgui-checkbox">
+                                    <label>Use a working Logger</label>
+                                </div>
+                                <div class="quest rpgui-cursor-point" id="4">
+                                    <input type="checkbox" data-rpguitype="checkbox" class="rpgui-checkbox">
+                                    <label>Use global AuthorizeAttribute</label>
+                                </div>
+                                <div class="quest rpgui-cursor-point" id="5">
+                                    <input type="checkbox" data-rpguitype="checkbox" class="rpgui-checkbox">
+                                    <label>Remove local AuthorizeAttribute</label>
+                                </div>
+                                <div class="quest rpgui-cursor-point" id="6">
+                                    <input type="checkbox" data-rpguitype="checkbox" class="rpgui-checkbox">
+                                    <label>Allow http thread context swap</label>
+                                </div>
+                        </div>
+
+
+                            <div class="details hide rpgui-container framed-golden" id="details_0" style="position:relative; width:47%; float:right;">
+                                <h1>Upgrade .NET Framework</h1>
+                                <hr>
+                                <span>Use latest .NET Framework Version, current version is 4.5</span>
+                            </div>
+                            <div class="details hide rpgui-container framed-golden" id="details_1" style="position:relative; width:47%; float:right;">
+                                <h1>Upgrade MVC Framework</h1>
+                                <hr>
+                                <span>Use latest MVC Framework Version, current version is Major 3, Minor 0</span>
+                            </div>
+                            <div class="details hide rpgui-container framed-golden" id="details_2" style="position:relative; width:47%; float:right;">
+                                <h1>Use IIS Pool Integrated Pipeline Mode</h1>
+                                <hr>
+                                <span>Switch application configuration to Integrated Pipeline mode, current mode is classic</span>
+                            </div>
+                            <div class="details hide rpgui-container framed-golden" id="details_3" style="position:relative; width:47%; float:right;">
+                                <h1>Use a working Logger</h1>
+                                <hr>
+                                <span>Use a working Logger, current logguer is LegacyFramework.Logger</span>
+                            </div>
+                            <div class="details hide rpgui-container framed-golden" id="details_4" style="position:relative; width:47%; float:right;">
+                                <h1>Use global AuthorizeAttribute</h1>
+                                <hr>
+                                <span>Use global AuthorizeAttribute, filters are empty</span>
+                            </div>
+                            <div class="details hide rpgui-container framed-golden" id="details_5" style="position:relative; width:47%; float:right;">
+                                <h1>Remove local AuthorizeAttribute</h1>
+                                <hr>
+                                <span>Remove local AuthorizeAttribute, controllers that use it are HomeController</span>
+                            </div>
+                            <div class="details hide rpgui-container framed-golden" id="details_6" style="position:relative; width:47%; float:right;">
+                                <h1>Allow http thread context swap</h1>
+                                <hr>
+                                <span>The program just set a value into HttpContext.Current.Items then swap with await Task.Yield() but value disapears, please fix it</span>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>
